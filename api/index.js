@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 
 app.post('/api/startups/create', async (req, res) => {
     try {
-        const response = await axios.post('http://localhost:3001/api/startups/create', req.body);
+        const response = await axios.post('https://create-startup-service-bws7pxxlv-inkrodr22s-projects.vercel.app/api/startups/create', req.body);
         res.json(response.data);
     } catch (error) {
         console.error(error);
