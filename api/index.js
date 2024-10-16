@@ -119,7 +119,7 @@ app.put('/api/technologies/update/:id', async (req, res) => {
 app.delete('/api/technologies/delete/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const response = await axios.delete(`http://localhost:3008/api/technologies/delete/${id}`);
+        const response = await axios.delete(`https://delete-technologies-service-inkrodr22s-projects.vercel.app/api/technologies/delete/${id}`);
         res.send(response.data);
     } catch (error) {
         console.error(error);
