@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-    origin: '*', // Permite todos los orígenes
+    origin: '*',
 }));
 
 
@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 
 app.post('/api/startups/create', async (req, res) => {
     try {
-        const response = await axios.post('https://create-startup-service-bws7pxxlv-inkrodr22s-projects.vercel.app/api/startups/create', req.body);
+        const response = await axios.post('https://create-startup-service-inkrodr22s-projects.vercel.app/api/startups/create', req.body);
         res.json(response.data);
     } catch (error) {
         console.error(error);
@@ -47,8 +47,8 @@ app.get('/api/startups/read/:id?', async (req, res) => {
     try {
         const { id } = req.params;
         const url = id 
-            ? ` https://read-startup-service-1lta750ma-inkrodr22s-projects.vercel.app/api/startups/read/${id}` 
-            : ' https://read-startup-service-1lta750ma-inkrodr22s-projects.vercel.app/api/startups/read';
+            ? ` https://read-startup-service-inkrodr22s-projects.vercel.app/api/startups/read/${id}` 
+            : 'https://read-startup-service-inkrodr22s-projects.vercel.app/api/startups/read';
 
         const response = await axios.get(url);
         res.json(response.data);
@@ -61,7 +61,7 @@ app.get('/api/startups/read/:id?', async (req, res) => {
 app.put('/api/startups/update/:id', async (req, res) => {
     const id = req.params.id;
     try {
-        const response = await axios.put(`http://localhost:3003/api/startups/update/${id}`, req.body);
+        const response = await axios.put(`https://update-startup-service-inkrodr22s-projects.vercel.app/api/startups/update/${id}`, req.body);
         res.send(response.data);
     } catch (error) {
         console.error(error);
@@ -82,7 +82,7 @@ app.delete('/api/startups/delete/:id', async (req, res) => {
 
 app.post('/api/technologies/create', async (req, res) => {
     try {
-        const response = await axios.post('https://create-technology-service-qrejw4y7u-inkrodr22s-projects.vercel.app/api/technologies/create', req.body);
+        const response = await axios.post('https://create-technology-service-inkrodr22s-projects.vercel.app/api/technologies/create', req.body);
         res.json(response.data);
     } catch (error) {
         console.error(error);
@@ -94,8 +94,8 @@ app.get('/api/technologies/read/:id?', async (req, res) => {
     try {
         const { id } = req.params;
         const url = id 
-            ? `https://read-technology-service-juzrj63dh-inkrodr22s-projects.vercel.app/api/technologies/read/${id}` 
-            : 'https://read-technology-service-juzrj63dh-inkrodr22s-projects.vercel.app/api/technologies/read';
+            ? `https://read-technology-service-inkrodr22s-projects.vercel.app/api/technologies/read/${id}` 
+            : 'https://read-technology-service-inkrodr22s-projects.vercel.app/api/technologies/read';
 
         const response = await axios.get(url);
         res.json(response.data);
@@ -108,7 +108,7 @@ app.get('/api/technologies/read/:id?', async (req, res) => {
 app.put('/api/technologies/update/:id', async (req, res) => {
     const id = req.params.id;
     try {
-        const response = await axios.put(`http://localhost:3007/api/technologies/update/${id}`, req.body);
+        const response = await axios.put(`https://update-technologies-service-inkrodr22s-projects.vercel.app/api/technologies/update/${id}`, req.body);
         res.send(response.data);
     } catch (error) {
         console.error(error);
