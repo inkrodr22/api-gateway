@@ -82,7 +82,7 @@ app.delete('/api/startups/delete/:id', async (req, res) => {
 
 app.post('/api/technologies/create', async (req, res) => {
     try {
-        const response = await axios.post('http://localhost:3005/api/technologies/create', req.body);
+        const response = await axios.post('https://create-technology-service-qrejw4y7u-inkrodr22s-projects.vercel.app/api/technologies/create', req.body);
         res.json(response.data);
     } catch (error) {
         console.error(error);
