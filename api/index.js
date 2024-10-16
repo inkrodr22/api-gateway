@@ -94,8 +94,8 @@ app.get('/api/technologies/read/:id?', async (req, res) => {
     try {
         const { id } = req.params;
         const url = id 
-            ? `http://localhost:3006/api/technologies/read/${id}` 
-            : 'http://localhost:3006/api/technologies/read';
+            ? `https://read-technology-service-juzrj63dh-inkrodr22s-projects.vercel.app/api/technologies/read/${id}` 
+            : 'https://read-technology-service-juzrj63dh-inkrodr22s-projects.vercel.app/api/technologies/read';
 
         const response = await axios.get(url);
         res.json(response.data);
